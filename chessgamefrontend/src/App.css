@@ -1,0 +1,78 @@
+/* Container for the entire game */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: black; /* Font color */
+}
+
+/* The grid board itself */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(5, 80px); /* 5 columns with fixed width */
+  grid-template-rows: repeat(5, 80px); /* 5 rows with fixed height */
+  gap: 5px; /* Gap between cells */
+  border: 2px solid #333; /* Border around the board */
+  background-color: #333; /* Background for board gaps */
+  padding: 10px;
+}
+
+/* Individual cell in the board */
+.board-cell {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0d9b5; /* Base color for cells */
+  border: 1px solid #333;
+  cursor: pointer;
+  font-weight: bold; /* Bold text for clarity */
+  font-size: 18px; /* Larger font size for readability */
+  color: #333;
+}
+
+/* Highlighting the selected cell */
+.board-cell.selected {
+  background-color: #ffeb3b; /* Yellow color for selected piece */
+}
+
+/* Control buttons and their container */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 10px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px; /* Font size for control buttons */
+}
+
+.controls button:hover {
+  background-color: #303f9f;
+}
+
+h2, h3 {
+  margin: 10px 0;
+  color: white; /* Change this if needed */
+}
+
+/* Setting a max width for responsive design */
+@media screen and (max-width: 600px) {
+  .game-board {
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5, 60px);
+  }
+  .board-cell {
+    width: 60px;
+    height: 60px;
+  }
+}
